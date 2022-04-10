@@ -24,29 +24,28 @@ char* itoa(int valor, char* buffer, int base) {
     int resto = valor % base;
 
     if (resto >= 10) {
-      buffer[i++] = 65 + (resto - 10); // Essas somas servem para localizar o caractere na tabela ASCII.
+      buffer[i++] = 65 + (resto - 10);
     } else {
       buffer[i++] = 48 + resto;
-    } // Se o resto for maior ou igual a 10, se entende que é um valor hexadecimal.
+    } 
  
     valor = valor / base;
   }
 
   if (i == 0) {
-     buffer[i++] = '0'; // Caso o número seja 0.
+     buffer[i++] = '0'; 
   }
 
-  buffer[i] = '\0'; //Põe um fim na string.
+  buffer[i] = '\0'; 
  
-  return inverter(buffer, 0, i - 1); //Inverte a posição dos caracteres para que se leia pela forma normal.
-}
+  return inverter(buffer, 0, i - 1); 
 
 int main() {
   char buffer[33];
   int valor;
     
   printf("Insira um valor decimal para convertê-lo em hexadecimal e em octal: ");
-  if(scanf("%d", &valor)){}; // Pequeno if para o compilador não ignorar o scan.
+  if(scanf("%d", &valor)){}; 
   printf("\n");
   
   int base[]  = { 16, 8 };
